@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+
+    <link rel="stylesheet" href="style3.css">
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="theme-toggle">
+        <button id="themeBtn">🌙 Dark Mode</button>
+    </div>
+
+    <div class="container">
+
+        <h1>Tic Tac Toe Pro</h1>
+
+        <!-- Game Mode -->
+        <div class="mode-selection">
+            <label>
+                <input type="radio" name="mode" value="pvp" checked>
+                Player vs Player
+            </label>
+
+            <label>
+                <input type="radio" name="mode" value="ai">
+                Player vs Computer
+            </label>
+        </div>
+
+        <!-- Player Names -->
+        <div class="player-setup">
+
+            <input
+                type="text"
+                id="playerX"
+                placeholder="Enter Player X Name"
+            >
+
+            <input
+                type="text"
+                id="playerO"
+                placeholder="Enter Player O Name"
+            >
+
+            <button id="setNames">
+                Set Names
+            </button>
+
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="scoreboard">
+
+            <div class="score-card active-player" id="cardX">
+                <h3 id="nameX">Player X (X)</h3>
+                <p>Wins: <span id="scoreX">0</span></p>
+            </div>
+
+            <div class="score-card" id="cardO">
+                <h3 id="nameO">Player O (O)</h3>
+                <p>Wins: <span id="scoreO">0</span></p>
+            </div>
+
+            <div class="score-card">
+                <h3>Draws</h3>
+                <p><span id="drawCount">0</span></p>
+            </div>
+
+            <div class="score-card">
+                <h3>Games</h3>
+                <p><span id="gamesPlayed">0</span></p>
+            </div>
+
+        </div>
+
+        <!-- Status -->
+        <div id="status">
+            Player X's Turn
+        </div>
+
+        <!-- Board -->
+        <div class="board">
+
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+
+            <button id="restart">
+                🔄 New Round
+            </button>
+
+            <button id="resetScores">
+                🗑 Reset Scores
+            </button>
+
+        </div>
+
+        <!-- Match History -->
+        <div class="history">
+
+            <h2>Match History</h2>
+
+            <ul id="historyList">
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- Winner Popup -->
+    <div id="winnerPopup" class="popup">
+
+        <div class="popup-content">
+
+            <h2 id="winnerMessage">
+                Winner
+            </h2>
+
+            <button onclick="closePopup()">
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script3.js"></script>
+
+</body>
+</html>
